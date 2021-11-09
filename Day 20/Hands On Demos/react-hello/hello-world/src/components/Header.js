@@ -5,7 +5,7 @@ import "../App.css";
 function Header() {
   return (
     <div className="Header">
-      <p>This is the header.</p>
+      <img src="images/wired-brain-coffee-logo.png" alt="Wired Brain" />
     </div>
   );
 }

@@ -1,8 +1,22 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
+import { shallow } from "enzyme";
 import Header from "../Header";
 
-it("renders correctly", () => {
-  const div = document.createElement("div");
+describe("Header", function () {
+  let mountedHeader;
 
-  render(<Header />, div);
+  beforeEach(() => {
+    mountedHeader = shallow(<Header />);
+  });
+
+  it("renders without crashing", () => {
+    let mountedHeader = shallow(<Header />);
+  });
+
+  it("renders a logo", () => {
+    const logoImg = mountedHeader.find("img");
+    expect(logoImg.getElement(0).props.src).toEqual(
+      "images/wired-brain-coffee-logo.png"
+    );
+  });
 });
